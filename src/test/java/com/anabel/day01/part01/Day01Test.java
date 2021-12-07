@@ -1,6 +1,5 @@
 package com.anabel.day01.part01;
 
-import com.anabel.day01.part01.DepthIncreaseCounter;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -22,15 +21,17 @@ class Day01Test {
                 .getResource("day01ExampleInput.txt").toURI());
 
         Stream<String> measurements = Files.lines(day01ExampleInput);
-        DepthIncreaseCounter totalCounter = measurements.map(Integer::parseInt)
-                .reduce(new DepthIncreaseCounter(),
-                        (counter, measurement) ->
-                                DepthIncreaseCounter.count(counter,
-                                        counter.create(measurement)),
-                        DepthIncreaseCounter::count);
+        MeasurementsStatus finalStatus = measurements
+                .map(Integer::parseInt)
+                .map(Measurement::new)
+                .reduce(new MeasurementsStatus(),
+                        (currentStatus, nextMeasurement) ->
+                                MeasurementsStatus.update(currentStatus,
+                                        currentStatus.next(nextMeasurement)),
+                        MeasurementsStatus::update);
         measurements.close();
 
-        assertEquals(expectedNumberOfIncreases, totalCounter.getCounter());
+        assertEquals(expectedNumberOfIncreases, finalStatus.getIncreasedCounter());
     }
 
 }
