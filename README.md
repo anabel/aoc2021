@@ -4,12 +4,12 @@ Just for fun. My solutions to [Advent of Code 2021](https://adventofcode.com/202
 
 ## Prerequisites
 
-* Jdk 1.8 or higher
+Jdk 1.9 or higher
 
 ## Run
 
-./gradlew run
+`./gradlew run`
 
 ## Test
 
-./gradlew test
+`./gradlew test`
