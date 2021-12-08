@@ -5,7 +5,7 @@ import com.anabel.aoc2021.day02.part01.command.CommandAdapter;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class Dive {
+public class Dive01 {
     public static String solve(Stream<String> commands) {
         Submarine submarine = new Submarine();
         commands.map(CommandAdapter::toCommand)

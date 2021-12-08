@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SonarSweep01Test {
 
     @Test
-    public void givenAFileWithMeasurements_NumberOfIncreasesIsCalculated() throws URISyntaxException, IOException {
+    public void givenAStreamWithMeasurements_NumberOfIncreasesIsCalculated() throws URISyntaxException, IOException {
         String expectedResult = "7";
 
         Path day01ExampleInput = Paths.get(getClass().getClassLoader()
