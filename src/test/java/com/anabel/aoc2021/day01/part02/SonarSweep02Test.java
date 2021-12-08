@@ -15,23 +15,16 @@ class SonarSweep02Test {
 
     @Test
     public void givenAFileWithMeasurements_NumberOfIncreasesIsCalculated() throws URISyntaxException, IOException {
-        int expectedNumberOfIncreases = 1150;
+        String expectedResult = "5";
 
         Path day01ExampleInput = Paths.get(getClass().getClassLoader()
-                .getResource("day01Input.txt").toURI());
+                .getResource("day01ExampleInput.txt").toURI());
 
         Stream<String> measurements = Files.lines(day01ExampleInput);
-        MeasurementsStatus finalStatus = measurements
-                .map(Integer::parseInt)
-                .map(Measurement::new)
-                .reduce(new MeasurementsStatus(),
-                        (currentStatus, nextMeasurement) ->
-                                MeasurementsStatus.update(currentStatus,
-                                        currentStatus.next(nextMeasurement)),
-                        MeasurementsStatus::update);
+        String output = SonarSweep02.solve(measurements);
         measurements.close();
 
-        assertEquals(expectedNumberOfIncreases, finalStatus.getIncreasedCounter());
+        assertEquals(expectedResult, output);
     }
 
 }
