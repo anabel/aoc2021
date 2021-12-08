@@ -1,4 +1,4 @@
-package com.anabel.day01.part01;
+package com.anabel.aoc2021.day01.part01;
 
 import org.junit.jupiter.api.Test;
 

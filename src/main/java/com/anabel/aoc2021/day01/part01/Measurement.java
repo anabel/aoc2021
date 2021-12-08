@@ -1,4 +1,4 @@
-package com.anabel.day01.part01;
+package com.anabel.aoc2021.day01.part01;
 
 public class Measurement {
     private Integer value;

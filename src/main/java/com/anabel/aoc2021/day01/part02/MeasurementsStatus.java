@@ -1,4 +1,4 @@
-package com.anabel.day01.part02;
+package com.anabel.aoc2021.day01.part02;
 
 public class MeasurementsStatus {
     private MeasurementWindow measurementWindow;
