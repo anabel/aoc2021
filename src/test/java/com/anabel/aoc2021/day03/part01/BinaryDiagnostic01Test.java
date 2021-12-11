@@ -1,6 +1,5 @@
-package com.anabel.aoc2021.day03;
+package com.anabel.aoc2021.day03.part01;
 
-import com.anabel.aoc2021.day02.part02.Dive02;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,10 +11,10 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BinaryDiagnostic01Test {
+class BinaryDiagnostic02Test {
     @Test
-    void givenAListOfBinaryNumbers_SubmarineConsumptionIsCalculated() throws IOException, URISyntaxException {
-        String expectedResult = "198";
+    void givenAListOfBinaryNumbers_LifeSupportRatingIsCalculated() throws IOException, URISyntaxException {
+        String expectedResult = "230";
 
         Path day03ExampleInput = Paths.get(getClass().getClassLoader()
                 .getResource("day03ExampleInput.txt").toURI());

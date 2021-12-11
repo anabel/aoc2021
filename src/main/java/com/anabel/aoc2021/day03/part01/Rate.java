@@ -1,4 +1,4 @@
-package com.anabel.aoc2021.day03;
+package com.anabel.aoc2021.day03.part01;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

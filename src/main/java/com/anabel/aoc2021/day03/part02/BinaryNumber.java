@@ -1,4 +1,4 @@
-package com.anabel.aoc2021.day03;
+package com.anabel.aoc2021.day03.part02;
 
 public record BinaryNumber(String number) {
     public static Integer LENGTH;

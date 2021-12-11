@@ -1,4 +1,4 @@
-package com.anabel.aoc2021.day03;
+package com.anabel.aoc2021.day03.part02;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -8,6 +8,8 @@ public class Report {
     private Rate onesRate;
     private Rate gammaRate;
     private Rate epsilonRate;
+    private Rate co2ScrubberRating;
+    private Rate oxygenGeneratorRating;
 
     public void addNumber(String number) {
        Integer[] column = Arrays.stream(number.split("")).mapToInt(Integer::valueOf)
@@ -51,13 +53,21 @@ public class Report {
         epsilonRate = new Rate(epsilon);
     }
 
+    public Integer calculateLifeSupportRating() {
+        oxygenGeneratorRating = new AcumulatedFilteringRatingCalculator(transposedNumbers.transpose()).execute(Bit::lessCommon);
+        co2ScrubberRating = new AcumulatedFilteringRatingCalculator(transposedNumbers.transpose()).execute(Bit::mostCommon);
+        return oxygenGeneratorRating.toBinaryNumber().toDecimal() * co2ScrubberRating.toBinaryNumber().toDecimal();
+    }
+
     @Override
     public String toString() {
-        return "DiagnosticReport{" +
+        return "Report{" +
                 "transposedNumbers=" + transposedNumbers +
                 ", onesRate=" + onesRate +
                 ", gammaRate=" + gammaRate +
                 ", epsilonRate=" + epsilonRate +
+                ", co2ScrubberRating=" + co2ScrubberRating +
+                ", oxygenGeneratorRating=" + oxygenGeneratorRating +
                 '}';
     }
 }
