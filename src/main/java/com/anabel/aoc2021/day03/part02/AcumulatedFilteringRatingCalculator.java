@@ -9,13 +9,13 @@ public class AcumulatedFilteringRatingCalculator {
         this.numbers = numbers;
     }
 
-    public Rate execute(BinaryOperator<Integer> bitFilter) {
+    public Rate execute(BinaryOperator<Integer> bitCriteria) {
         int position = 0;
         do {
             Integer onesTotal = numbers.transpose().sum(position);
             Integer total = numbers.getRows();
-            Integer lessCommon = bitFilter.apply(onesTotal, total);
-            numbers = numbers.removeRowsThatContain(lessCommon, position);
+            Integer bit = bitCriteria.apply(onesTotal, total);
+            numbers = numbers.removeRowsThatContain(bit, position);
             position++;
         } while (numbers.getRows()>1);
         return new Rate(numbers.getRow(0));
