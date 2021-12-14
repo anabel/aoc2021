@@ -1,6 +1,6 @@
-package com.anabel.aoc2021.day04.Part01;
+package com.anabel.aoc2021.day04.Part02;
 
-import com.anabel.aoc2021.day04.part01.GiantSquid01;
+import com.anabel.aoc2021.day04.part02.GiantSquid02;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,16 +12,16 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GiantSquid01Test {
+class GiantSquid02Test {
     @Test
-    void givenNumbersAndBoards_WhenABoardWinsScoreIsCalculated() throws IOException, URISyntaxException {
-        String expectedResult = "4512";
+    void givenNumbersAndBoards_WhenLastBoardWinsScoreIsCalculated() throws IOException, URISyntaxException {
+        String expectedResult = "1924";
 
         Path day04ExampleInput = Paths.get(getClass().getClassLoader()
                 .getResource("day04ExampleInput.txt").toURI());
 
         Stream<String> bingo = Files.lines(day04ExampleInput);
-        String output = GiantSquid01.solve(bingo);
+        String output = GiantSquid02.solve(bingo);
         bingo.close();
 
         assertEquals(expectedResult, output);
