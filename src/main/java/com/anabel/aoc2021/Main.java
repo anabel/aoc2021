@@ -8,6 +8,7 @@ import com.anabel.aoc2021.day03.part01.BinaryDiagnostic01;
 import com.anabel.aoc2021.day03.part02.BinaryDiagnostic02;
 import com.anabel.aoc2021.day04.part01.GiantSquid01;
 import com.anabel.aoc2021.day04.part02.GiantSquid02;
+import com.anabel.aoc2021.day05.part01.HydrothermalVenture01;
 import com.anabel.aoc2021.shared.Solver;
 
 import java.util.stream.Stream;
@@ -23,7 +24,8 @@ public class Main {
                 new Solver("Day 03 Part 01", "day03Input.txt", BinaryDiagnostic01::solve),
                 new Solver("Day 03 Part 02", "day03Input.txt", BinaryDiagnostic02::solve),
                 new Solver("Day 04 Part 01", "day04Input.txt", GiantSquid01::solve),
-                new Solver("Day 04 Part 02", "day04Input.txt", GiantSquid02::solve)
+                new Solver("Day 04 Part 02", "day04Input.txt", GiantSquid02::solve),
+                new Solver("Day 05 Part 01", "day05Input.txt", HydrothermalVenture01::solve)
         );
 
 
