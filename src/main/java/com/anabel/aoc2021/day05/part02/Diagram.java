@@ -19,19 +19,12 @@ public class Diagram {
     }
 
     private void addLine(Line line) {
-        if (line.isHorizontal()) {
-            IntStream.rangeClosed(line.start().y(),line.end().y()).forEach(y -> {
-                addLineToPoint(y, line.start().x());
-            });
-        } else {
-            IntStream.rangeClosed(line.start().x(),line.end().x()).forEach(x -> {
-                addLineToPoint(line.start().y(), x);
-            });
-        }
+        List<Position> positions = line.toPositions();
+        positions.forEach(this::addPosition);
     }
 
-    private void addLineToPoint(int i, int j) {
-        this.values[i][j]++;
+    private void addPosition(Position position) {
+        this.values[position.y()][position.x()]++;
     }
 
     public Integer dangerousPointsCount() {

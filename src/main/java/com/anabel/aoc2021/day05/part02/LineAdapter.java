@@ -18,6 +18,6 @@ public class LineAdapter {
         int secondY = Integer.parseInt(matcher.group("secondY"));
         Position first = new Position(firstX, firstY);
         Position second = new Position(secondX, secondY);
-        return Line.create(first, second);
+        return new Line(first, second);
     }
 }
